@@ -543,5 +543,84 @@ namespace MyTrade.Controllers
             }
             return RedirectToAction("WalletList", "Wallet");
         }
+
+        //public ActionResult WalletTransfer()
+        //{
+        //    Common objcomm = new Common();
+        //    #region Check Balance
+        //    objcomm.Fk_UserId = Session["Pk_UserId"].ToString();
+        //    DataSet ds = objcomm.GetWalletBalance();
+        //    if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+        //    {
+        //        ViewBag.WalletBalance = ds.Tables[0].Rows[0]["Amount"].ToString();
+        //    }
+        //    #endregion
+
+
+        //    #region GetDirectPayment
+        //    DataSet ds1 = objcomm.GetWalletTransferCharge();
+        //    if (ds1 != null && ds1.Tables.Count > 0 && ds1.Tables[0].Rows.Count > 0)
+        //    {
+        //        ViewBag.MemberTransferCharge = ds1.Tables[0].Rows[0]["MemberTransferCharge"].ToString();
+        //    }
+        //    #endregion
+        //    return View();
+        //}
+        
+        //[HttpPost]
+        //[ActionName("WalletTransfer")]
+        //[OnAction(ButtonName = "btnTransfer")]
+        //public ActionResult WalletTransfer(UserWallet model)
+        //{
+        //    try
+        //    {
+        //        model.AddedBy = Session["PK_UserId"].ToString();
+        //        DataSet ds = model.SaveWalletTransferBalance();
+        //        if (ds != null && ds.Tables.Count > 0)
+        //        {
+        //            if (ds.Tables[0].Rows[0][0].ToString() == "1")
+        //            {
+        //                TempData["wallettransfer"] = "Transferred  successfully";
+        //            }
+        //            else
+        //            {
+        //                TempData["wallettransfer"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        TempData["wallettransfer"] = ex.Message;
+        //    }
+        //    return RedirectToAction("WalletTransfer","Wallet");
+        //}
+
+        //[HttpPost]
+        //public ActionResult GetNameDetailsforUser(string LoginId,string CustomerId)
+        //{
+        //    UserWallet model = new UserWallet();
+        //    model.LoginId = LoginId;
+        //    DataSet ds = model.GetNameDetailsforUserWalletTransfer();
+        //    if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+        //    {
+        //        if (ds.Tables[0].Rows[0][0].ToString() == "0")
+        //        {
+        //            model.Result = "no";
+        //        }
+        //        else
+        //        {
+        //            model.Result = "yes";
+        //            model.Fk_UserId = ds.Tables[0].Rows[0]["PK_UserId"].ToString();
+        //            model.Name = ds.Tables[0].Rows[0]["Name"].ToString();
+        //            model.Amount = ds.Tables[1].Rows[0]["Balance"].ToString();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        model.Result = "no";
+        //    }
+        //    return Json(model, JsonRequestBehavior.AllowGet);
+        //}
+
     }
 }

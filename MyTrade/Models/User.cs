@@ -71,7 +71,29 @@ namespace MyTrade.Models
 
         #endregion
 
-     
+
+        public DataSet SaveWalletTransferBalance()
+        {
+            SqlParameter[] para = {
+                 new SqlParameter("@Fk_UserId",Fk_UserId),
+                new SqlParameter("@Amount",Amount),
+                 new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("SaveWalletTransfer", para);
+            return ds;
+        }
+
+        public DataSet GetNameDetailsforUserWalletTransfer()
+        {
+            SqlParameter[] para = {
+                new SqlParameter("@LoginId",LoginId)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("GetNameDetailsforTransferwallet", para);
+            return ds;
+        }
+
+
+
         public DataSet ValidateEpin()
         {
             SqlParameter[] para = {

@@ -12,6 +12,7 @@ namespace MyTrade.Models
     {
         #region property
         public string LoginId { get; set; }
+        public string CustomerId { get; set; }
         public string Amount { get; set; }
         public string NoofPins { get; set; }
         public string FinalAmount { get; set; }
@@ -488,6 +489,9 @@ namespace MyTrade.Models
             DataSet ds = DBHelper.ExecuteQuery("GetNameDetails", para);
             return ds;
         }
+
+        
+        
         public DataSet SaveTransferWallet()
         {
             SqlParameter[] para = {
@@ -686,7 +690,14 @@ namespace MyTrade.Models
         #endregion
 
 
-
+        public DataSet GetNameDetailsforTransferwallet()
+        {
+            SqlParameter[] para = {
+                new SqlParameter("@CustomerId",CustomerId)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("GetNameDetailsforTransferwallet", para);
+            return ds;
+        }
 
 
         public DataSet GetSponsorIncomeReport()

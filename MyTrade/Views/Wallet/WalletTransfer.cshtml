@@ -1,0 +1,156 @@
+﻿@model MyTrade.Models.UserWallet
+@{
+    ViewBag.Title = "WalletTransfer";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("WalletTransfer", "Wallet", FormMethod.Post, new { @*@id = "form1",*@ enctype = "multipart/form-data" }))
+{
+    <div class="content-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Wallet Transfer</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="row mb-4">
+                                    <div class="col-md-12">
+                                        @TempData["wallettransfer"]<br />
+                                        <label style="color:red">MTG Token/USDT Wallet Balance: @ViewBag.WalletBalance</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-3 mb-3">
+                                    <div class="example">
+                                       @Html.HiddenFor(m => m.Fk_UserId)
+                                        <p class="mb-1">Contact Address Id<span style="color: red">*</span></p>
+                                        @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", @placeholder = "MTG Contact Address", @onchange = "return GetNameDetailsforUser();" })
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 mb-3">
+                                <div class="example">
+                                    <p class="mb-1"> Name<span style="color: red">*</span></p>
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Name", @readonly = true })
+                                </div>
+                                </div>
+                                <div class="col-xl-3 mb-3">
+                                    <div class="example">
+                                        <p class="mb-1"> MTG Token/USDT<span style="color: red">*</span></p>
+                                        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @Placeholder = "MTG Token/USDT", @onkeypress = "return isNumberOrDecimal(event);" })
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 mb-3">
+                                    <div class="example">
+                                        <p class="mb-1">Transfer Charge<span style="color: red">*</span></p>
+                                        @*<label id="DirectPayment">@ViewBag.DirectPayment</label>*@
+                                        <input id="MemberTransferCharge" name="MemberTransferCharge" value="@ViewBag.MemberTransferCharge" readonly class="form-control" />
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                            <div class="=row">
+                                <div class="col-md-12">
+                                    <input class="btn btn-success pull-left" type="submit" value="Transfer" id="btnTransfer" name="btnTransfer" onclick="return validateform();" />
+                                </div>
+                            </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+        </div>
+   
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+<script src="~/MyTradeWebsite/assets/js/jquery.min.js"></script>
+
+<script>
+    
+    function GetNameDetailsforUser() {
+        debugger;
+        var LoginId = $('#LoginId').val();
+        $.ajax({
+            url: '/Wallet/GetNameDetailsforUser', type: 'post', dataType: 'json',
+            data: { 'LoginId': LoginId },
+            success: function (data) {
+                if (data.Result == "yes") {
+                    $("#Fk_UserId").val(data.Fk_UserId);
+                    $("#Name").val(data.Name);
+                    $("#LoginId").removeClass('errortext');
+                    $("#Name").removeClass('errortext');
+                }
+                else if (data.Result == "no") {
+                    alert('Invailid LoginId');
+                    $("#LoginId").val('');
+                    $("#Name").val('');
+                    $("#LoginId").addClass('errortext');
+                    $("#Name").addClass('errortext');
+                    $('#LoginId').focus();
+                }
+            }
+
+        });
+    }
+
+
+    function validateform() {
+        debugger;
+        $(".errortext").removeClass("errortext");
+        if ($('#LoginId').val() == '') {
+            $("#LoginId").addClass('errortext');
+            $('#LoginId').focus();
+            return false;
+        }
+        if ($('#Amount').val() == '') {
+            $("#Amount").addClass('errortext');
+            $('#Amount').focus();
+            return false;
+        }
+        else {
+
+        }
+        return true;
+    }
+
+
+    function isNumberOrDecimal(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31
+          && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+</script>
+
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

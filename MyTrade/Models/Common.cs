@@ -271,6 +271,15 @@ namespace MyTrade.Models
         }
 
 
+        public DataSet GetWalletTransferCharge()
+        {
+            SqlParameter[] para = { /*new SqlParameter("@PK_USerID", Fk_UserId)*/ };
+            DataSet ds = DBHelper.ExecuteQuery("GetWalletTransferCharge", para);
+
+            return ds;
+
+        }
+
         public static List<SelectListItem> BindCountry()
         {
             List<SelectListItem> ddlcountry = new List<SelectListItem>();

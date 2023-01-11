@@ -797,8 +797,8 @@ namespace MyTrade.Controllers
                 {
                     Master obj = new Master();
                     obj.Pk_BalanceTransferId = r["Pk_BalanceTransferId"].ToString();
-                    obj.DirectPayment = r["DirectPayment"].ToString();
-                    obj.BuySales = r["BuySales"].ToString();
+                    obj.MemberTransferCharge = r["MemberTransferCharge"].ToString();
+                    obj.BrokerTransferCharge = r["BrokerTransferCharge"].ToString();
                     obj.Status = r["Status"].ToString();
                     lst.Add(obj);
                 }
@@ -813,8 +813,8 @@ namespace MyTrade.Controllers
                 if (ds2 != null && ds2.Tables.Count > 0)
                 {
                     model.Pk_BalanceTransferId= ds2.Tables[0].Rows[0]["Pk_BalanceTransferId"].ToString();
-                    model.DirectPayment = ds2.Tables[0].Rows[0]["DirectPayment"].ToString();
-                    model.BuySales = ds2.Tables[0].Rows[0]["BuySales"].ToString();
+                    model.MemberTransferCharge = ds2.Tables[0].Rows[0]["MemberTransferCharge"].ToString();
+                    model.BrokerTransferCharge = ds2.Tables[0].Rows[0]["BrokerTransferCharge"].ToString();
                     model.Status = ds2.Tables[0].Rows[0]["Status"].ToString();
                 }
                 
@@ -843,7 +843,7 @@ namespace MyTrade.Controllers
                 {
                     if (ds.Tables[0].Rows[0][0].ToString() == "1")
                     {
-                        TempData["Transfermsg"] = "Brokerage Deduction Successfully";
+                        TempData["Transfermsg"] = "Brokerage Deduction Saved Successfully";
                     }
                     else
                     {

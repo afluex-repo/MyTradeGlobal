@@ -589,38 +589,6 @@
     <Content Include="UserPanel\images\tab\2.jpg" />
     <Content Include="UserPanel\images\tab\3.jpg" />
     <Content Include="UserPanel\images\tab\4.jpg" />
-    <Content Include="UserPanel\js\custom.min.js" />
-    <Content Include="UserPanel\js\dashboard\coin-details.js" />
-    <Content Include="UserPanel\js\dashboard\dashboard-1.js" />
-    <Content Include="UserPanel\js\dashboard\dashboard-2.js" />
-    <Content Include="UserPanel\js\dashboard\dashboard-3.js" />
-    <Content Include="UserPanel\js\dashboard\dashboard-4.js" />
-    <Content Include="UserPanel\js\dashboard\market-capital.js" />
-    <Content Include="UserPanel\js\dashboard\my-wallet.js" />
-    <Content Include="UserPanel\js\dashboard\portofolio.js" />
-    <Content Include="UserPanel\js\demo.js" />
-    <Content Include="UserPanel\js\deznav-init.js" />
-    <Content Include="UserPanel\js\plugins-init\bs-daterange-picker-init.js" />
-    <Content Include="UserPanel\js\plugins-init\chartist-init.js" />
-    <Content Include="UserPanel\js\plugins-init\chartjs-init.js" />
-    <Content Include="UserPanel\js\plugins-init\clock-picker-init.js" />
-    <Content Include="UserPanel\js\plugins-init\datatables.init.js" />
-    <Content Include="UserPanel\js\plugins-init\flot-init.js" />
-    <Content Include="UserPanel\js\plugins-init\jquery-asColorPicker.init.js" />
-    <Content Include="UserPanel\js\plugins-init\jquery.validate-init.js" />
-    <Content Include="UserPanel\js\plugins-init\jqvmap-init.js" />
-    <Content Include="UserPanel\js\plugins-init\material-date-picker-init.js" />
-    <Content Include="UserPanel\js\plugins-init\morris-init.js" />
-    <Content Include="UserPanel\js\plugins-init\nestable-init.js" />
-    <Content Include="UserPanel\js\plugins-init\nouislider-init.js" />
-    <Content Include="UserPanel\js\plugins-init\pickadate-init.js" />
-    <Content Include="UserPanel\js\plugins-init\piety-init.js" />
-    <Content Include="UserPanel\js\plugins-init\select2-init.js" />
-    <Content Include="UserPanel\js\plugins-init\sparkline-init.js" />
-    <Content Include="UserPanel\js\plugins-init\sweetalert.init.js" />
-    <Content Include="UserPanel\js\plugins-init\toastr-init.js" />
-    <Content Include="UserPanel\js\plugins-init\widgets-script-init.js" />
-    <Content Include="UserPanel\js\styleSwitcher.js" />
     <Content Include="UserPanel\Trident\index.html" />
     <Content Include="UserPanel\vendor\animate\animate.min.css" />
     <Content Include="UserPanel\vendor\aos\css\aos.min.css" />
@@ -1042,6 +1010,8 @@
     <Content Include="UserPanel\vendor\lightgallery\fonts\lgd641.ttf" />
     <Content Include="UserPanel\vendor\lightgallery\fonts\lgd641.woff" />
     <Content Include="Views\Master\BalanceTransfer.cshtml" />
+    <Content Include="Views\Wallet\WalletTransfer.cshtml" />
+    <Content Include="Views\User\WalletTransfer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1053,6 +1023,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="PanUpload\" />
     <Folder Include="plugins\apex\" />
+    <Folder Include="UserPanel\js\" />
     <Folder Include="Views\API\" />
     <Folder Include="Views\WebAPI\" />
   </ItemGroup>

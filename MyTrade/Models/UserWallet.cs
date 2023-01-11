@@ -13,7 +13,8 @@ namespace MyTrade.Models
         public string Country { get; set; }
         public string LoginId { get; set; }
         public string Amount { get; set; }
-
+        public string DirectPayment { get; set; }
+        public string CustomerId { get; set; }
         public string PaymentMode { get; set; }
         public string DDChequeNo { get; set; }
         public string DDChequeDate { get; set; }
@@ -49,14 +50,14 @@ namespace MyTrade.Models
         public dynamic OrderId { get; internal set; }
         public string Type { get; set; }
         public string TransactionType { get; set; }
-
+        public string Fk_UserId { get; set; }
         public string Status { get; set; }
         public string TodaysCurrency { get; set; }
         public string IndianValue { get; set; }
         public string result { get; set; }
-
+        public string ContactName { get; set; }
+        public string Result { get; set; }
         
-
         public DataSet GetMemberDetails()
         {
             SqlParameter[] para = {

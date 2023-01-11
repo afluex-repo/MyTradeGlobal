@@ -4,6 +4,10 @@
     ViewBag.Title = "UserDashBoard";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
+@{
+    ViewBag.Title = "UserDashBoard";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="~/plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
 <link href="~/assets/css/dashboard/dash_1.css" rel="stylesheet" type="text/css" />
@@ -13,28 +17,27 @@
         height: 50px;
     }
 
-    divdash>h2{
-    margin-left: 357px;
-    margin-top: 26px;
-    position: fixed;
-    float: inherit;
-    z-index: 30;
+    divdash > h2 {
+        margin-left: 357px;
+        margin-top: 26px;
+        position: fixed;
+        float: inherit;
+        z-index: 30;
     }
-    
-    @@media only screen and (max-width: 768px) {
-    divdash>h2{
-    margin-left: 140px;
-    margin-top: 26px;
-    position: fixed;
-    float: inherit;
-    z-index: 30;
-    }
-  }
 
+    @@media only screen and (max-width: 768px) {
+        divdash > h2 {
+            margin-left: 140px;
+            margin-top: 26px;
+            position: fixed;
+            float: inherit;
+            z-index: 30;
+        }
+    }
 </style>
 
 <divdash>
-    <h2>DASHBOARD</h2>
+    <h2>Dashboard</h2>
 </divdash>
 
 <div class="content-body">
@@ -236,7 +239,7 @@
                     <div class="card-header d-block d-sm-flex border-0">
                         <div>
                             <h4 class="fs-20 text-black">Market Overview</h4>
-                            <p class="mb-0 fs-12">Lorem ipsum dolor sit amet, consectetur</p>
+                            @*<p class="mb-0 fs-12">Lorem ipsum dolor sit amet, consectetur</p>*@
                         </div>
                         <div class="card-action card-tabs mt-3 mt-sm-0">
                             <ul class="nav nav-tabs" role="tablist">
@@ -287,48 +290,48 @@
                                         <span class="text-black pe-3"><img src="~/UserPanel/images/mtg.png" /> &nbsp;@ViewBag.TotalDrAmount </span>
                                     </div>
                                 </div>
-                                <div class="col-6 text-end">
-                                    <a href="javascript:void(0);" class="btn btn-primary light btn-rounded"><i class="las la-download scale5 me-2"></i>Get Report</a>
-                                </div>
+                                @*<div class="col-6 text-end">
+                                        <a href="javascript:void(0);" class="btn btn-primary light btn-rounded"><i class="las la-download scale5 me-2"></i>Get Report</a>
+                                    </div>*@
                             </div>
                             <div id="chartBarRunning" class="bar-chart"></div>
                         </div>
-                        <div class="tab-pane fade" id="Week">
-                            <div class="row">
-                                <div class="d-flex col-6 align-items-center">
-                                    <div class="fs-18 font-w600 me-3">
-                                        <span class="text-success pe-3">BUY</span>
-                                        <span class="text-black pe-3"><img src="~/UserPanel/images/mtg.png" />&nbsp; @ViewBag.TotalCrAmount</span>
+                        @*<div class="tab-pane fade" id="Week">
+                                <div class="row">
+                                    <div class="d-flex col-6 align-items-center">
+                                        <div class="fs-18 font-w600 me-3">
+                                            <span class="text-success pe-3">BUY</span>
+                                            <span class="text-black pe-3"><img src="~/UserPanel/images/mtg.png" />&nbsp; @ViewBag.TotalCrAmount</span>
+                                        </div>
+                                        <div class="fs-18 font-w600 ms-auto">
+                                            <span class="text-danger pe-3">SELL</span>
+                                            <span class="text-black pe-3"><img src="~/UserPanel/images/mtg.png" />&nbsp;@ViewBag.TotalDrAmount </span>
+                                        </div>
                                     </div>
-                                    <div class="fs-18 font-w600 ms-auto">
-                                        <span class="text-danger pe-3">SELL</span>
-                                        <span class="text-black pe-3"><img src="~/UserPanel/images/mtg.png" />&nbsp;@ViewBag.TotalDrAmount </span>
-                                    </div>
-                                </div>
-                                <div class="col-6 text-end">
-                                    <a href="javascript:void(0);" class="btn btn-primary light btn-rounded"><i class="las la-download scale5 me-2"></i>Get Report</a>
-                                </div>
-                            </div>
-                            <div id="chartBarRunning2" class="bar-chart"></div>
-                        </div>
-                        <div class="tab-pane fade" id="Year">
-                            <div class="row">
-                                <div class="d-flex col-6 align-items-center">
-                                    <div class="fs-18 font-w600 me-3">
-                                        <span class="text-success pe-3">BUY</span>
-                                        <span class="text-black pe-3"><img src="~/UserPanel/images/mtg.png" /> &nbsp; @ViewBag.TotalCrAmount</span>
-                                    </div>
-                                    <div class="fs-18 font-w600 ms-auto">
-                                        <span class="text-danger pe-3">SELL</span>
-                                        <span class="text-black pe-3"><img src="~/UserPanel/images/mtg.png" /> &nbsp;@ViewBag.TotalDrAmount </span>
+                                    <div class="col-6 text-end">
+                                        <a href="javascript:void(0);" class="btn btn-primary light btn-rounded"><i class="las la-download scale5 me-2"></i>Get Report</a>
                                     </div>
                                 </div>
-                                <div class="col-6 text-end">
-                                    <a href="javascript:void(0);" class="btn btn-primary light btn-rounded"><i class="las la-download scale5 me-2"></i>Get Report</a>
+                                <div id="chartBarRunning2" class="bar-chart"></div>
+                            </div>*@
+                        @*<div class="tab-pane fade" id="Year">
+                                <div class="row">
+                                    <div class="d-flex col-6 align-items-center">
+                                        <div class="fs-18 font-w600 me-3">
+                                            <span class="text-success pe-3">BUY</span>
+                                            <span class="text-black pe-3"><img src="~/UserPanel/images/mtg.png" /> &nbsp; @ViewBag.TotalCrAmount</span>
+                                        </div>
+                                        <div class="fs-18 font-w600 ms-auto">
+                                            <span class="text-danger pe-3">SELL</span>
+                                            <span class="text-black pe-3"><img src="~/UserPanel/images/mtg.png" /> &nbsp;@ViewBag.TotalDrAmount </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <a href="javascript:void(0);" class="btn btn-primary light btn-rounded"><i class="las la-download scale5 me-2"></i>Get Report</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div id="chartBarRunning3" class="bar-chart"></div>
-                        </div>
+                                <div id="chartBarRunning3" class="bar-chart"></div>
+                            </div>*@
                     </div>
                 </div>
             </div>
@@ -336,8 +339,8 @@
                 <div class="card">
                     <div class="card-header d-sm-flex d-block pb-0 border-0">
                         <div>
-                            <h4 class="fs-20 text-black">Crypto Statistics</h4>
-                            <p class="mb-0 fs-12">Lorem ipsum dolor sit amet, consectetur</p>
+                            <h4 class="fs-20 text-black">Currency Statistics</h4>
+                            @*<p class="mb-0 fs-12">Lorem ipsum dolor sit amet, consectetur</p>*@
                         </div>
                         <div class="d-flex mt-sm-0 mt-3">
                             <div class="form-check form-switch text-end me-4 mb-2">
@@ -368,33 +371,33 @@
                                 </label>
                             </div>
                             @*<div class="form-check custom-checkbox me-5 mb-2">
-                                <input type="checkbox" class="form-check-input" id="customCheck91">
-                                <label class="form-check-label" for="customCheck91">
-                                    <span class="d-block text-black font-w500">Ripple</span>
-                                    <span class="fs-12">XRP</span>
-                                </label>
-                            </div>
-                            <div class="form-check custom-checkbox me-5 mb-2">
-                                <input type="checkbox" class="form-check-input" id="customCheck92">
-                                <label class="form-check-label" for="customCheck92">
-                                    <span class="d-block text-black font-w500">Ethereum</span>
-                                    <span class="fs-12">ETH</span>
-                                </label>
-                            </div>
-                            <div class="form-check custom-checkbox me-5 mb-2">
-                                <input type="checkbox" class="form-check-input" id="customCheck93">
-                                <label class="form-check-label" for="customCheck93">
-                                    <span class="d-block text-black font-w500">Zcash</span>
-                                    <span class="fs-12">ZEC</span>
-                                </label>
-                            </div>
-                            <div class="form-check custom-checkbox me-4 mb-2">
-                                <input type="checkbox" class="form-check-input" id="customCheck94">
-                                <label class="form-check-label" for="customCheck94">
-                                    <span class="d-block text-black font-w500">LiteCoin</span>
-                                    <span class="fs-12">LTC</span>
-                                </label>
-                            </div>*@
+                                    <input type="checkbox" class="form-check-input" id="customCheck91">
+                                    <label class="form-check-label" for="customCheck91">
+                                        <span class="d-block text-black font-w500">Ripple</span>
+                                        <span class="fs-12">XRP</span>
+                                    </label>
+                                </div>
+                                <div class="form-check custom-checkbox me-5 mb-2">
+                                    <input type="checkbox" class="form-check-input" id="customCheck92">
+                                    <label class="form-check-label" for="customCheck92">
+                                        <span class="d-block text-black font-w500">Ethereum</span>
+                                        <span class="fs-12">ETH</span>
+                                    </label>
+                                </div>
+                                <div class="form-check custom-checkbox me-5 mb-2">
+                                    <input type="checkbox" class="form-check-input" id="customCheck93">
+                                    <label class="form-check-label" for="customCheck93">
+                                        <span class="d-block text-black font-w500">Zcash</span>
+                                        <span class="fs-12">ZEC</span>
+                                    </label>
+                                </div>
+                                <div class="form-check custom-checkbox me-4 mb-2">
+                                    <input type="checkbox" class="form-check-input" id="customCheck94">
+                                    <label class="form-check-label" for="customCheck94">
+                                        <span class="d-block text-black font-w500">LiteCoin</span>
+                                        <span class="fs-12">LTC</span>
+                                    </label>
+                                </div>*@
                         </div>
                         <div id="lineChart"></div>
                     </div>
@@ -408,7 +411,7 @@
                             <div class="card-header d-sm-flex d-block pb-0 border-0">
                                 <div>
                                     <h4 class="fs-20 text-black">Quick Transfer</h4>
-                                    <p class="mb-0 fs-12">Lorem ipsum dolor sit amet, consectetur</p>
+                                    @*<p class="mb-0 fs-12">Lorem ipsum dolor sit amet, consectetur</p>*@
                                 </div>
                                 <select class="form-control custom-image-select-1 image-select mt-3 mt-sm-0">
                                     <option data-thumbnail="/UserPanel/images/MtgCoinPng.png">23,511 MTG</option>
@@ -429,7 +432,7 @@
                                             <div class="text-center">
                                                 <img class="mb-3 rounded" src="@item.ProfilePic" alt="">
                                                 <h6 class="text-black mb-0">@item.CustomerName</h6>
-                                                <b style="font-size:small;">MTG Contact Address<br /></b>
+                                                <b style="font-size:small;">MTG CA<br /></b>
                                                 <span style="font-weight:bold;font-size:0.8rem;">(@item.CustomerId)</span>
                                             </div>
                                         </div>
@@ -691,6 +694,12 @@
                             </div>
                         </div>
                     }
+
+
+
+
+
+
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                         <div class="card overflow-hidden">
                             <div class="card-header align-items-start border-0 pb-0">
@@ -711,13 +720,13 @@
 
                                                             <div class="carousel-item active" style="padding: 0px 10px;">
                                                                 @*<div class="widget-heading mb-3">
-                                                                    <h5 class="">@Model.lstReward[i].Title</h5>
-                                                                    <p class="UserDetailsssTitle">@Model.lstReward[i].Title</p>
-                                                                </div>*@
+                                                                        <h5 class="">@Model.lstReward[i].Title</h5>
+                                                                        <p class="UserDetailsssTitle">@Model.lstReward[i].Title</p>
+                                                                    </div>*@
                                                                 <img class="d-block w-100 img-height" src="@Model.lstReward[i].Image" alt="First slide" style="border-radius: 10px;">
                                                                 @*<div class="carousel-caption">
-                                                                    <h5>@Model.lstReward[i].Title</h5>
-                                                                </div>*@
+                                                                        <h5>@Model.lstReward[i].Title</h5>
+                                                                    </div>*@
                                                             </div>
                                                         }
                                                     }
@@ -731,31 +740,31 @@
 
                                                             <div class="carousel-item" style="padding:0px 10px">
                                                                 @*<div class="widget-heading">
-                                                                    <h5>@Model.lstReward[i].Title</h5>
-                                                                    <p class="UserDetailsssTitle">@Model.lstReward[i].Title</p>
-                                                                </div>*@
+                                                                        <h5>@Model.lstReward[i].Title</h5>
+                                                                        <p class="UserDetailsssTitle">@Model.lstReward[i].Title</p>
+                                                                    </div>*@
                                                                 <img class="d-block w-100 img-height" src="@Model.lstReward[i].Image" alt="First slide" style="border-radius: 10px;width:100%">
                                                                 @*<div class="carousel-caption">
-                                                                    <h5>@Model.lstReward[i].Title</h5>
-                                                                </div>*@
+                                                                        <h5>@Model.lstReward[i].Title</h5>
+                                                                    </div>*@
                                                             </div>
                                                         }
                                                     }
                                                 }
                                                 @*<div class="carousel-item active">
-                                                    <img class="d-block w-100 img-height" src="~/MyTradeWebsite/assets/img/4.jpg" alt="Second slide">
-                                                    <div class="carousel-caption d-none d-sm-block">
-                                                        <h5>Second slide</h5>
-                                                        <p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
+                                                        <img class="d-block w-100 img-height" src="~/MyTradeMTGWebsite/assets/img/4.jpg" alt="Second slide">
+                                                        <div class="carousel-caption d-none d-sm-block">
+                                                            <h5>Second slide</h5>
+                                                            <p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img class="d-block w-100 img-height" src="~/MyTradeWebsite/assets/img/4.jpg" alt="Third slide">
-                                                    <div class="carousel-caption d-none d-sm-block">
-                                                        <h5>Third slide</h5>
-                                                        <p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
-                                                    </div>
-                                                </div>*@
+                                                    <div class="carousel-item">
+                                                        <img class="d-block w-100 img-height" src="~/MyTradeMTGWebsite/assets/img/4.jpg" alt="Third slide">
+                                                        <div class="carousel-caption d-none d-sm-block">
+                                                            <h5>Third slide</h5>
+                                                            <p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
+                                                        </div>
+                                                    </div>*@
                                             </div>
                                             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -792,11 +801,11 @@
                         @if (Session["LoginId"].ToString() != "")
                         {
                             //var link = Session["Pk_UserId"].ToString();
-                            <span class="s-icon"><a href="mailto:?subject= Referral Link &amp;body=http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString(). Thanks." target="_blank" style="background:#871505"><i class="fa fa-envelope fa-lg"></i></a></span>
-                            <span class="s-icon"><a href="https://api.whatsapp.com/send?text=http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#42f560" data-action="share/whatsapp/share"><i class="fa fa-whatsapp fa-lg"></i></a></span>
-                            <span class="s-icon"><a href="https://www.facebook.com/sharer.php?u=http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#4267B2"><i class="fa fa-facebook fa-lg"></i></a></span>
-                            <span class="s-icon"><a href="https://www.instagram.com/?url=http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#E1306C"><i class="fa fa-instagram fa-lg"></i></a></span>
-                            <span class="s-icon"><a href="https://twitter.com/intent/tweet?text=http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#1DA1F2"><i class="fa fa-twitter fa-lg"></i></a></span>
+                            <span class="s-icon"><a href="mailto:?subject= Referral Link &amp;body=http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString(). Thanks." target="_blank" style="background:#871505"><i class="fa fa-envelope fa-lg"></i></a></span>
+                            <span class="s-icon"><a href="https://api.whatsapp.com/send?text=http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#42f560" data-action="share/whatsapp/share"><i class="fa fa-whatsapp fa-lg"></i></a></span>
+                            <span class="s-icon"><a href="https://www.facebook.com/sharer.php?u=http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#4267B2"><i class="fa fa-facebook fa-lg"></i></a></span>
+                            <span class="s-icon"><a href="https://www.instagram.com/?url=http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#E1306C"><i class="fa fa-instagram fa-lg"></i></a></span>
+                            <span class="s-icon"><a href="https://twitter.com/intent/tweet?text=http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#1DA1F2"><i class="fa fa-twitter fa-lg"></i></a></span>
                         }
                     </div>
                 </div>
@@ -991,12 +1000,12 @@
                     </div>
                     <div class="wallet-balance">
                         <a href="~/Coming.html" class="btn btn-danger mr-2"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Recharge</a>
-                        @*<p><a href="~/MyTradeWebsite/Coming.html"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>  Recharge</a></p>*
+                        @*<p><a href="~/MyTradeMTGWebsite/Coming.html"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>  Recharge</a></p>*
                     </div>
                     <div class="wallet-balance">
                         <div class="fisrtdiv">
                             <a href="~/Coming.html" class="btn btn-secondary mr-2"><i class="fa fa-file-text" aria-hidden="true"></i> Bill Payment</a>
-                            @*<p><a href="~/MyTradeWebsite/Coming.html"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>  Bill Payment</a></p>*
+                            @*<p><a href="~/MyTradeMTGWebsite/Coming.html"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>  Bill Payment</a></p>*
                         </div>
                     </div>
                 </div>
@@ -1094,14 +1103,14 @@
                                 }
                             }
                             @*<div class="carousel-item active">
-                                    <img class="d-block w-100 img-height" src="~/MyTradeWebsite/assets/img/4.jpg" alt="Second slide">
+                                    <img class="d-block w-100 img-height" src="~/MyTradeMTGWebsite/assets/img/4.jpg" alt="Second slide">
                                     <div class="carousel-caption d-none d-sm-block">
                                         <h5>Second slide</h5>
                                         <p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100 img-height" src="~/MyTradeWebsite/assets/img/4.jpg" alt="Third slide">
+                                    <img class="d-block w-100 img-height" src="~/MyTradeMTGWebsite/assets/img/4.jpg" alt="Third slide">
                                     <div class="carousel-caption d-none d-sm-block">
                                         <h5>Third slide</h5>
                                         <p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
@@ -1146,7 +1155,7 @@
             <div class="widget-content ">
                 <div class="alert alert-icon-right alert-light-red" role="alert">
 
-                    <strong><a target="_blank" style="font-size: 14px;color:red;word-wrap:break-word" href="http://mytrade.co.in//Home/Registration?Pid=@Session[" Pk_UserId"].ToString()">http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()</a></strong>
+                    <strong><a target="_blank" style="font-size: 14px;color:red;word-wrap:break-word" href="http://MyTradeMTG.co.in//Home/Registration?Pid=@Session[" Pk_UserId"].ToString()">http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()</a></strong>
 
                     <a href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></a>*
 
@@ -1166,11 +1175,11 @@
                             {
                                 //var link = Session["Pk_UserId"].ToString();
 
-                                <span class="s-icon"><a href="mailto:?subject= Referral Link &amp;body=http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString(). Thanks." target="_blank" style="background:#871505"><i class="fa fa-envelope fa-lg"></i></a></span>
-                                <span class="s-icon"><a href="https://api.whatsapp.com/send?text=http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#42f560" data-action="share/whatsapp/share"><i class="fa fa-whatsapp fa-lg"></i></a></span>
-                                <span class="s-icon"><a href="https://www.facebook.com/sharer.php?u=http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#4267B2"><i class="fa fa-facebook fa-lg"></i></a></span>
-                                <span class="s-icon"><a href="https://www.instagram.com/?url=http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#E1306C"><i class="fa fa-instagram fa-lg"></i></a></span>
-                                <span class="s-icon"><a href="https://twitter.com/intent/tweet?text=http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#1DA1F2"><i class="fa fa-twitter fa-lg"></i></a></span>
+                                <span class="s-icon"><a href="mailto:?subject= Referral Link &amp;body=http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString(). Thanks." target="_blank" style="background:#871505"><i class="fa fa-envelope fa-lg"></i></a></span>
+                                <span class="s-icon"><a href="https://api.whatsapp.com/send?text=http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#42f560" data-action="share/whatsapp/share"><i class="fa fa-whatsapp fa-lg"></i></a></span>
+                                <span class="s-icon"><a href="https://www.facebook.com/sharer.php?u=http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#4267B2"><i class="fa fa-facebook fa-lg"></i></a></span>
+                                <span class="s-icon"><a href="https://www.instagram.com/?url=http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#E1306C"><i class="fa fa-instagram fa-lg"></i></a></span>
+                                <span class="s-icon"><a href="https://twitter.com/intent/tweet?text=http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()" target="_blank" style="background:#1DA1F2"><i class="fa fa-twitter fa-lg"></i></a></span>
                             }
                         </div>
                     </div>
@@ -1190,7 +1199,7 @@
 
             <div class="media-body">
                 <div class="alert-text">
-                    <a target="_blank" style="font-size: 14px;" href="http://mytrade.co.in//Home/Registration?Pid=@Session[" Pk_UserId"].ToString()"><strong>http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()</strong></a>
+                    <a target="_blank" style="font-size: 14px;" href="http://MyTradeMTG.co.in//Home/Registration?Pid=@Session[" Pk_UserId"].ToString()"><strong>http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()</strong></a>
                 </div>
 
             </div>
@@ -1212,7 +1221,7 @@
     <div class="row my-2">
         <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
             <div class="referral-url copy" style="text-align:left; word-wrap: break-word;">
-                <a target="_blank" style="font-size: 14px;" href="http://mytrade.co.in//Home/Registration?Pid=@Session[" Pk_UserId"].ToString()">http://mytrade.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()</a>
+                <a target="_blank" style="font-size: 14px;" href="http://MyTradeMTG.co.in//Home/Registration?Pid=@Session[" Pk_UserId"].ToString()">http://MyTradeMTG.co.in//Home/Registration?Pid=@Session["Pk_UserId"].ToString()</a>
 
             </div>
         </div>
@@ -1232,14 +1241,3 @@
 @*<script src="~/plugins/apex/apexcharts.min.js"></script>
     <script src="~/plugins/apex/custom-apexcharts.js"></script>*@
 @*<script src="~/assets/js/libs/jquery-3.1.1.min.js"></script>*@
-
-
-
-
-
-
-
-
-
-
-

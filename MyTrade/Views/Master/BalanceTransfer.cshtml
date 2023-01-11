@@ -27,14 +27,14 @@
                             @Html.HiddenFor(m => m.Pk_BalanceTransferId)
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="col-form-label">Brokerage MTG Token/USDT on Direct Payment<span style="color: red">*</span></label>
-                                        @Html.TextBoxFor(m => m.DirectPayment, new { @placeholder = "Direct Payment", @class = "form-control", @onkeypress = "return isNumberKey(event)" })
+                                        <label class="col-form-label">Member MTG Transfer Charges<span style="color: red">*</span></label>
+                                        @Html.TextBoxFor(m => m.MemberTransferCharge, new { @placeholder = "Member MTG Transfer Charges", @class = "form-control", @onkeypress = "return isNumberKey(event)" })
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="col-form-label">Brokerage MTG Token/USDT on Buy Sales<span style="color: red">*</span></label>
-                                        @Html.TextBoxFor(m => m.BuySales, new { @placeholder = "Buy Sales", @class = "form-control", @onkeypress = "return isNumberKey(event)" })
+                                        <label class="col-form-label">Broker MTG Transfer Charges<span style="color: red">*</span></label>
+                                        @Html.TextBoxFor(m => m.BrokerTransferCharge, new { @placeholder = "Broker MTG Transfer Charges", @class = "form-control", @onkeypress = "return isNumberKey(event)" })
 
                                     </div>
                                 </div>
@@ -65,8 +65,8 @@
                             <thead>
                                 <tr>
                                     <th>S No.</th>
-                                    <th>Direct Payment</th>
-                                    <th>Buy Sales</th>
+                                    <th>Member MTG Transfer Charge</th>
+                                    <th>Broker Transfer Charge</th>
                                     @*<th>Status</th>*@
                                     <th>Action</th>
                                 </tr>
@@ -81,8 +81,8 @@
                                         {
                                             <tr class="text-left">
                                                 <td>@i</td>
-                                                <td>@Item.DirectPayment</td>
-                                                <td>@Item.BuySales</td>
+                                                <td>@Item.MemberTransferCharge</td>
+                                                <td>@Item.BrokerTransferCharge</td>
                                                 @*<td>@Item.Status</td>*@
                                                 <td>
                                                     <a href="/Master/BalanceTransfer?Pk_BalanceTransferId=@Item.Pk_BalanceTransferId" class="btn btn-info btn-sm">Edit</a>
@@ -117,14 +117,14 @@
             $('#LoginId').focus();
             return false;
         }
-        if ($('#DirectPayment').val() == '') {
-            $("#DirectPayment").addClass('errortext');
-            $('#DirectPayment').focus();
+        if ($('#MemberTransferCharge').val() == '') {
+            $("#MemberTransferCharge").addClass('errortext');
+            $('#MemberTransferCharge').focus();
             return false;
         }
-        if ($('#BuySales').val() == '') {
-            $("#BuySales").addClass('errortext');
-            $('#BuySales').focus();
+        if ($('#BrokerTransferCharge').val() == '') {
+            $("#BrokerTransferCharge").addClass('errortext');
+            $('#BrokerTransferCharge').focus();
             return false;
         }
     }

@@ -274,16 +274,16 @@ namespace MyTrade.Models
 
         #region BalanceTransfer
         public string Pk_BalanceTransferId { get; set; }
-        public string DirectPayment { get; set; }
-        public string BuySales { get; set; }
+        public string MemberTransferCharge { get; set; }
+        public string BrokerTransferCharge { get; set; }
 
 
         public DataSet SaveBalanceTransfer()
         {
             SqlParameter[] para = {
                 new SqlParameter("@Fk_UserId",Fk_UserId),
-                new SqlParameter("@DirectPayment",DirectPayment),
-                new SqlParameter("@BuySales",BuySales),
+                new SqlParameter("@MemberTransferCharge",MemberTransferCharge),
+                new SqlParameter("@BrokerTransferCharge",BrokerTransferCharge),
                 new SqlParameter("@AddedBy",AddedBy)
             };
             DataSet ds = DBHelper.ExecuteQuery("SaveBalanceTransfer", para);
@@ -307,8 +307,8 @@ namespace MyTrade.Models
                 new SqlParameter("@Fk_UserId",Fk_UserId),
                 new SqlParameter("@AddedBy",AddedBy),
                 //new SqlParameter("@Status",Status),
-                new SqlParameter("@DirectPayment", DirectPayment),
-                new SqlParameter("@BuySales", BuySales),
+                new SqlParameter("@MemberTransferCharge",MemberTransferCharge),
+                new SqlParameter("@BrokerTransferCharge",BrokerTransferCharge),
             };
             DataSet ds = DBHelper.ExecuteQuery("UpdateBalanceTransfer", para);
             return ds;
