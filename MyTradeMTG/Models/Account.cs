@@ -42,7 +42,7 @@ namespace MyTradeMTG.Models
         public string Remark { get; set; }
         public string PackageDays { get; set; }
         public string Email { get; set; }
-        public string ActivationMTG { get; set; }
+        public string ActivationMyTradeMTG { get; set; }
         public string CustomerId { get; set; }
         public string ROI { get; set; }
         public string Topupid { get; set; }
@@ -62,7 +62,7 @@ namespace MyTradeMTG.Models
                                         new SqlParameter("@AddedBy", FK_UserId),
                                         new SqlParameter("@Fk_ProductId",PackageId),
                                         new SqlParameter("@Amount", Amount),
-                                        new SqlParameter("@ActivationMTGToken", ActivationMTGToken)
+                                        new SqlParameter("@ActivationMyTradeMTGToken", ActivationMyTradeMTGToken)
                                  };
             DataSet ds = DBHelper.ExecuteQuery("TopUp", para);
             return ds;
@@ -115,7 +115,7 @@ namespace MyTradeMTG.Models
             return ds;
         }
 
-        public DataSet GetActivationMTGForTopUp()
+        public DataSet GetActivationMyTradeMTGForTopUp()
         {
             SqlParameter[] para = {
 
@@ -126,7 +126,7 @@ namespace MyTradeMTG.Models
             return ds;
         }
 
-        public string ActivationMTGToken { get; set; }
+        public string ActivationMyTradeMTGToken { get; set; }
 
     }
 }

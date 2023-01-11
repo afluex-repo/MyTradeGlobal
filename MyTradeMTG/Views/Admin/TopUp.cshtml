@@ -23,7 +23,7 @@
                 <div class="widget-content widget-content-area">
                     <div class="row">
                         <div class="col-md-4">
-                            <span style="color:red;">MTG Token/USDT Wallet Balance : @ViewBag.TotalWalletAmount</span>
+                            <span style="color:red;">MyTradeMTG Token/USDT Wallet Balance : @ViewBag.TotalWalletAmount</span>
                         </div>
                     </div>
 
@@ -43,8 +43,8 @@
                         </div>
                         <div class="col-md-4">
                             <input type="hidden" id="WalletAmount" value="@ViewBag.TotalWalletAmount" />
-                            <label for="Amount">MTG Token/USDT <span style="color:red">*</span></label>
-                            @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @placeholder = "MTG Token/USDT", @onkeypress = "return isNumberKey(event);", @onchange = "return CheckAmount();" })
+                            <label for="Amount">MyTradeMTG Token/USDT <span style="color:red">*</span></label>
+                            @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @placeholder = "MyTradeMTG Token/USDT", @onkeypress = "return isNumberKey(event);", @onchange = "return CheckAmount();" })
                             <span style="color:red">Min  : <span id="spfrom"></span> </span><span style="color:red;padding-left:50px"> Max : <span id="spto"></span> </span><span style="color:red;padding-left:50px"> In Multiple Of : <span id="spmul"></span></span>
                             <input type="hidden" value="@ViewBag.ToAmount" id="hdfMax" />
                             <input type="hidden" id="hdfMin" />

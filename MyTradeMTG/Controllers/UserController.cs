@@ -322,13 +322,13 @@ namespace MyTradeMTG.Controllers
                 ViewBag.ToAmount = ds1.Tables[0].Rows[0]["ToAmount"].ToString();
                 if (Session["UserActivationTopUp"].ToString() == "0")
                 {
-                    ViewBag.ActivationMTGToken = ds1.Tables[0].Rows[0]["ActivationMTGToken"].ToString();
+                    ViewBag.ActivationMyTradeMTGToken = ds1.Tables[0].Rows[0]["ActivationMyTradeMTGToken"].ToString();
                 }
                 else
                 {
-                    ViewBag.ActivationMTGToken = "0";
+                    ViewBag.ActivationMyTradeMTGToken = "0";
                 }
-               // ViewBag.ActivationMTGToken = ds1.Tables[0].Rows[0]["ActivationMTGToken"].ToString();
+               // ViewBag.ActivationMyTradeMTGToken = ds1.Tables[0].Rows[0]["ActivationMyTradeMTGToken"].ToString();
                 ViewBag.InMultipleOf = ds1.Tables[0].Rows[0]["InMultipleOf"].ToString();
                 ViewBag.ROIPercent = ds1.Tables[0].Rows[0]["ROIPercent"].ToString();
                 ViewBag.Status = ds1.Tables[1].Rows[0]["Status"].ToString();
@@ -410,17 +410,17 @@ namespace MyTradeMTG.Controllers
             return Json(model, JsonRequestBehavior.AllowGet);
         }
 
-        //public ActionResult GetActivationMTG(string PackageTypeId)
+        //public ActionResult GetActivationMyTradeMTG(string PackageTypeId)
         //{
-        //    List<SelectListItem> ActivationMTGToken = new List<SelectListItem>();
+        //    List<SelectListItem> ActivationMyTradeMTGToken = new List<SelectListItem>();
         //    Account obj = new Account();
         //    obj.PackageTypeId = PackageTypeId;
-        //    DataSet ds = obj.GetActivationMTGForTopUp();
+        //    DataSet ds = obj.GetActivationMyTradeMTGForTopUp();
         //    if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
         //    {
-        //            obj.ActivationMTGToken = ds.Tables[0].Rows[0]["ActivationMTGToken"].ToString();
+        //            obj.ActivationMyTradeMTGToken = ds.Tables[0].Rows[0]["ActivationMyTradeMTGToken"].ToString();
         //    }
-        //    ViewBag.ActivationMTGToken = ActivationMTGToken;
+        //    ViewBag.ActivationMyTradeMTGToken = ActivationMyTradeMTGToken;
         //    return Json(obj, JsonRequestBehavior.AllowGet);
         //}
 
@@ -1340,7 +1340,7 @@ namespace MyTradeMTG.Controllers
                     obj.UsedFor = r["UsedFor"].ToString();
                     //obj.BV = r["BV"].ToString();
                     //obj.Topupid = r["Topupid"].ToString();
-                    obj.ActivationMTGToken = r["ActivationMTGToken"].ToString();
+                    obj.ActivationMyTradeMTGToken = r["ActivationMyTradeMTGToken"].ToString();
                     obj.IsCalculated = r["IsCalculated"].ToString();
                     obj.TransactionBy = r["TransactionBy"].ToString();
                     obj.Status = r["Status"].ToString();
@@ -1379,7 +1379,7 @@ namespace MyTradeMTG.Controllers
                     obj.PinAmount = r["PinAmount"].ToString();
                     obj.UsedFor = r["UsedFor"].ToString();
                     //obj.BV = r["BV"].ToString();
-                    obj.ActivationMTGToken = r["ActivationMTGToken"].ToString();
+                    obj.ActivationMyTradeMTGToken = r["ActivationMyTradeMTGToken"].ToString();
                     //obj.Topupid = r["Topupid"].ToString();
                     obj.IsCalculated = r["IsCalculated"].ToString();
                     obj.TransactionBy = r["TransactionBy"].ToString();
@@ -1884,7 +1884,7 @@ namespace MyTradeMTG.Controllers
                 {
                     obj.Result = "yes";
                     obj.FromAmount = Convert.ToDecimal(ds.Tables[0].Rows[0]["FromAmount"]);
-                    obj.ActivationMTGToken = Convert.ToDecimal(ds.Tables[0].Rows[0]["ActivationMTGToken"]);
+                    obj.ActivationMyTradeMTGToken = Convert.ToDecimal(ds.Tables[0].Rows[0]["ActivationMyTradeMTGToken"]);
                     obj.BasisOn = (ds.Tables[0].Rows[0]["BasisOn"]).ToString();
                     obj.ToAmount = Convert.ToDecimal(ds.Tables[0].Rows[0]["ToAmount"]);
                     obj.InMultipleOf = Convert.ToDecimal(ds.Tables[0].Rows[0]["InMultipleOf"]);

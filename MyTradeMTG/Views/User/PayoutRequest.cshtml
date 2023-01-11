@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3">
                                     <div class="form-group">
-                                        MTG Token/USDT Balance <span style="color: red">*</span>
+                                        MyTradeMTG Token/USDT Balance <span style="color: red">*</span>
                                         @Html.TextBoxFor(m => m.PayoutBalance, new { @class = "form-control", @Readonly = "true" })
                                     </div>
                                 </div>
@@ -43,8 +43,8 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3">
                                     <div class="form-group">
-                                        MTG Coin<span style="color: red">*</span>
-                                        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @Placeholder = "MTG Token/USDT", @onkeypress = "return isNumberKey(event);", @onchange = "return GetFinalAmount();" })
+                                        MyTradeMTG Token/USDT<span style="color: red">*</span>
+                                        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @Placeholder = "MyTradeMTG Token/USDT", @onkeypress = "return isNumberKey(event);", @onchange = "return GetFinalAmount();" })
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3" style="margin-top:25px">
@@ -58,7 +58,7 @@
                                     <div class="form-group">
                                         <h6 style="color:red">Total Charges:  <label id="lbld" style="color:red;">0</label></h6><br />
                                         <h6 style="color:green">
-                                            Gross MTG Token/USDT to be deducted:  <span id="lblf" style="color:green;">0</span>
+                                            Gross MyTradeMTG Token/USDT to be deducted:  <span id="lblf" style="color:green;">0</span>
                                         </h6>
                                     </div>
                                 </div>
@@ -71,10 +71,10 @@
                                             <th>Narration</th>
                                             @*<th>Login Id</th>
                         <th>Name</th>*@
-                                            <th>Gross MTG Token/USDT</th>
+                                            <th>Gross MyTradeMTG Token/USDT</th>
                                             <th>Procesing Charges</th>
-                                            <th>TDS MTG Token/USDT</th>
-                                            <th>Net MTG Token/USDT</th>
+                                            <th>TDS MyTradeMTG Token/USDT</th>
+                                            <th>Net MyTradeMTG Token/USDT</th>
                                             <th>Date</th>
                                             <th>IFSC Code</th>
                                             <th>Account No</th>

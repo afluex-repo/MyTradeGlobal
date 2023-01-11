@@ -537,8 +537,8 @@
     <Content Include="UserPanel\images\logo-text.png" />
     <Content Include="UserPanel\images\logo-white.png" />
     <Content Include="UserPanel\images\logo.png" />
-    <Content Include="UserPanel\images\mtg.png" />
-    <Content Include="UserPanel\images\MtgCoinPng.png" />
+    <Content Include="UserPanel\images\MyTradeMTG.png" />
+    <Content Include="UserPanel\images\MyTradeMTGCoinPng.png" />
     <Content Include="UserPanel\images\pattern\pattern1.png" />
     <Content Include="UserPanel\images\pattern\pattern2.png" />
     <Content Include="UserPanel\images\pattern\pattern3.png" />

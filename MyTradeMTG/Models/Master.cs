@@ -15,7 +15,7 @@ namespace MyTradeMTG.Models
         public List<Master> lstbalancetransfer { get; set; }
         public decimal BinaryPercent { get; set; }
         public decimal BV { get; set; }
-        public decimal ActivationMTGToken { get; set; }
+        public decimal ActivationMyTradeMTGToken { get; set; }
         public decimal CGST { get; set; }
         public decimal DirectPercent { get; set; }
         public decimal IGST { get; set; }
@@ -87,7 +87,7 @@ namespace MyTradeMTG.Models
                                      new SqlParameter("@InMultipleOf", InMultipleOf),
                                       //new SqlParameter("@HSNCode", HSNCode),
                                  //new SqlParameter("@FinalAmount",FinalAmount),
-                                  new SqlParameter("@ActivationMTGToken",ActivationMTGToken),
+                                  new SqlParameter("@ActivationMyTradeMTGToken",ActivationMyTradeMTGToken),
                                  new SqlParameter("@SponsorIncome",SponsorIncome),
                                  new SqlParameter("@IscomboPackage",IscomboPackage)
             };
@@ -151,7 +151,7 @@ namespace MyTradeMTG.Models
                                      new SqlParameter("@PackageTypeId", PackageTypeId),
                                    new SqlParameter("@FromAmount", FromAmount),
                                     new SqlParameter("@ToAmount", ToAmount),
-                                 new SqlParameter("@ActivationMTGToken",ActivationMTGToken),
+                                 new SqlParameter("@ActivationMyTradeMTGToken",ActivationMyTradeMTGToken),
                                  new SqlParameter("@InMultipleOf", InMultipleOf),
                                  //new SqlParameter("@HSNCode", HSNCode),
                                  //new SqlParameter("@FinalAmount",FinalAmount),

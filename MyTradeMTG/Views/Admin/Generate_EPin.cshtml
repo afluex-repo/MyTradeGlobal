@@ -35,8 +35,8 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label for="Amount">MTG Token/USDT</label>
-                                @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @placeholder = "MTG Token/USDT", @disabled = "disabled" })
+                                <label for="Amount">MyTradeMTG Token/USDT</label>
+                                @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @placeholder = "MyTradeMTG Token/USDT", @disabled = "disabled" })
                                 <input type="hidden" id="hdfFinal" />
                             </div>
 
@@ -47,8 +47,8 @@
                                 @Html.TextBoxFor(m => m.NoofPins, new { @class = "form-control", @placeholder = "No of Pins", @onchange = "getfinalamount();", @onkeypress = "return isNumberKey(event);" })
                             </div>
                             <div class="col-md-4">
-                                <label for="FinalAmount">Final MTG Token/USDT</label>
-                                @Html.TextBoxFor(m => m.FinalAmount, new { @class = "form-control", @placeholder = "Final MTG Token", @disabled = "disabled" })
+                                <label for="FinalAmount">Final MyTradeMTG Token/USDT</label>
+                                @Html.TextBoxFor(m => m.FinalAmount, new { @class = "form-control", @placeholder = "Final MyTradeMTG Token", @disabled = "disabled" })
                             </div>
                             <div class="col-md-4">
                                 <label for="Fk_Paymentid">Payment Mode</label>
@@ -87,9 +87,9 @@
                                         <th>Name</th>
                                         <th>Package</th>
                                         <th>Total Pin</th>
-                                        <th>MTG Token/USDT</th>
+                                        <th>MyTradeMTG Token/USDT</th>
                                         @*<th>GST</th>*@
-                                        <th>Final MTG Token/USDT</th>
+                                        <th>Final MyTradeMTG Token/USDT</th>
                                         <th>Payment Mode</th>
                                         <th>Generated Date</th>
                                         @*<th>Used Pin</th>

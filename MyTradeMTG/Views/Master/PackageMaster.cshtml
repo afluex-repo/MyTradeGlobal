@@ -49,10 +49,10 @@
                                         @Html.TextBoxFor(m => m.BV, new { @class = "form-control", @onkeypress = "return isNumberKey(event)",@onchange = "return CalculateFinalAmount();" })
                                 </div>
                             </div>*@
-                            <div class="col-md-3" id="divmtgtoken">
+                            <div class="col-md-3" id="divMyTradeMTGtoken">
                                 <div class="form-group">
-                                    <label class="col-form-label">Activation MTG Token <span style="color: red">*</span></label>
-                                    @Html.TextBoxFor(m => m.ActivationMTGToken, new { @class = "form-control", @onkeypress = "return isNumberKey(event)" })
+                                    <label class="col-form-label">Activation MyTradeMTG Token <span style="color: red">*</span></label>
+                                    @Html.TextBoxFor(m => m.ActivationMyTradeMTGToken, new { @class = "form-control", @onkeypress = "return isNumberKey(event)" })
                                 </div>
                             </div>
                             <div class="col-md-3" id="divpercent" style="display:none">
@@ -99,13 +99,13 @@
                         <div class="row mb-2">
                             <div class="col-md-3" style="display:none" id="divfromamount">
                                 <div class="form-group">
-                                    <label class="col-form-label">From MTG Token/USDT<span style="color: red">*</span></label>
+                                    <label class="col-form-label">From MyTradeMTG Token/USDT<span style="color: red">*</span></label>
                                         @Html.TextBoxFor(m => m.FromAmount, new { @class = "form-control", @onkeypress = "return isNumberKey(event)" })
                                  </div>
                             </div>
                             <div class="col-md-3" style="display:none" id="divtoamount">
                                 <div class="form-group">
-                                    <label class="col-form-label">To MTG Token/USDT<span style="color: red">*</span></label>
+                                    <label class="col-form-label">To MyTradeMTG Token/USDT<span style="color: red">*</span></label>
                                         @Html.TextBoxFor(m => m.ToAmount, new { @class = "form-control", @onkeypress = "return isNumberKey(event)", @onchange = "return checkAmount();" })
                                  </div>
                             </div>
@@ -276,7 +276,7 @@
             $("#opt2").show();
             $("#opt3").show();
             $("#BasisOn").val('');
-            $("#divmtgtoken").hide();
+            $("#divMyTradeMTGtoken").hide();
             $("#divdays").show();
             $("#divgst").hide();
             $("#divhsn").hide();
@@ -293,7 +293,7 @@
             $("#opt2").hide();
             $("#opt3").hide();
             $("#BasisOn").val('');
-            $("#divmtgtoken").show();
+            $("#divMyTradeMTGtoken").show();
             $("#divdays").hide();
             $("#divgst").show();
             $("#divhsn").show();
@@ -326,7 +326,7 @@
             $("#divfinal").hide();
             $("#divpercent").hide();
             $("#divbasis").hide();
-            $("#divmtgtoken").show();
+            $("#divMyTradeMTGtoken").show();
             $("#divdays").hide();
             $("#divisjoinpackage").hide();
             $("#divsponsorpercent").hide();
@@ -443,7 +443,7 @@
             $("#opt2").show();
             $("#opt3").show();
             $("#BasisOn").val('');
-            $("#divmtgtoken").show();
+            $("#divMyTradeMTGtoken").show();
             $("#divdays").show();
             $("#divgst").hide();
             $("#divhsn").hide();
@@ -460,7 +460,7 @@
             $("#opt2").hide();
             $("#opt3").hide();
             $("#BasisOn").val('');
-            $("#divmtgtoken").show();
+            $("#divMyTradeMTGtoken").show();
             $("#divdays").show();
             $("#divgst").show();
             $("#divhsn").show();
@@ -477,7 +477,7 @@
             $("#divfinal").hide();
             $("#divpercent").hide();
             $("#divbasis").hide();
-            $("#divmtgtoken").show();
+            $("#divMyTradeMTGtoken").show();
             $("#divdays").hide();
             $("#divisjoinpackage").hide();
             $("#divsponsorpercent").hide();
@@ -564,9 +564,9 @@
         //    $('#BV').focus();
         //    return false;
         //}
-        if ($('#ActivationMTGToken').val() == '' || $('#ActivationMTGToken').val() == '0') {
-            $("#ActivationMTGToken").addClass('errortext');
-            $('#ActivationMTGToken').focus();
+        if ($('#ActivationMyTradeMTGToken').val() == '' || $('#ActivationMyTradeMTGToken').val() == '0') {
+            $("#ActivationMyTradeMTGToken").addClass('errortext');
+            $('#ActivationMyTradeMTGToken').focus();
             return false;
         }
 
@@ -640,7 +640,7 @@
             url: "/Master/SaveProduct",
             Type: "Get",
             DataType: "JSON",
-            data: { PackageType: $("#PackageTypeId").val(), ProductName: $("#ProductName").val(), ProductPrice: $("#ProductPrice").val(), BasisOn: $("#BasisOn :selected").val(), ROIPercent: $("#ROIPercent").val(), ActivationMTGToken: $("#ActivationMTGToken").val(), FromAmount: $("#FromAmount").val(), ToAmount: $("#ToAmount").val(), Days: $("#Days").val(), InMultipleOf: $('#InMultipleOf').val(), FinalAmount: $('#FinalAmount').val(), SponsorIncome: $('#SponsorIncome').val(), IscomboPackage: IscomboPackage },
+            data: { PackageType: $("#PackageTypeId").val(), ProductName: $("#ProductName").val(), ProductPrice: $("#ProductPrice").val(), BasisOn: $("#BasisOn :selected").val(), ROIPercent: $("#ROIPercent").val(), ActivationMyTradeMTGToken: $("#ActivationMyTradeMTGToken").val(), FromAmount: $("#FromAmount").val(), ToAmount: $("#ToAmount").val(), Days: $("#Days").val(), InMultipleOf: $('#InMultipleOf').val(), FinalAmount: $('#FinalAmount').val(), SponsorIncome: $('#SponsorIncome').val(), IscomboPackage: IscomboPackage },
             success: function (data) {
                 alert(data.Result);
                 window.location.href = '@Url.Action("PackageMaster", "Master")';
@@ -726,9 +726,9 @@
         //    return false;
         //}
 
-        if ($('#ActivationMTGToken').val() == '') {
-            $("#ActivationMTGToken").addClass('errortext');
-            $('#ActivationMTGToken').focus();
+        if ($('#ActivationMyTradeMTGToken').val() == '') {
+            $("#ActivationMyTradeMTGToken").addClass('errortext');
+            $('#ActivationMyTradeMTGToken').focus();
             return false;
         }
 
@@ -753,7 +753,7 @@
             url: "/Master/UpdateProduct",
             Type: "Get",
             DataType: "JSON",
-            data: { PackageType: $("#PackageTypeId").val(), Packageid: $("#Packageid").val(), ProductName: $("#ProductName").val(), ProductPrice: $("#ProductPrice").val(), BasisOn: $("#BasisOn :selected").val(), ROIPercent: $("#ROIPercent").val(), ActivationMTGToken: $("#ActivationMTGToken").val(), FromAmount: $("#FromAmount").val(), ToAmount: $("#ToAmount").val(), Days: $("#Days").val(), InMultipleOf: $('#InMultipleOf').val(), FinalAmount: $("#FinalAmount").val(), SponsorIncome: $('#SponsorIncome').val(), IscomboPackage: IscomboPackage },
+            data: { PackageType: $("#PackageTypeId").val(), Packageid: $("#Packageid").val(), ProductName: $("#ProductName").val(), ProductPrice: $("#ProductPrice").val(), BasisOn: $("#BasisOn :selected").val(), ROIPercent: $("#ROIPercent").val(), ActivationMyTradeMTGToken: $("#ActivationMyTradeMTGToken").val(), FromAmount: $("#FromAmount").val(), ToAmount: $("#ToAmount").val(), Days: $("#Days").val(), InMultipleOf: $('#InMultipleOf').val(), FinalAmount: $("#FinalAmount").val(), SponsorIncome: $('#SponsorIncome').val(), IscomboPackage: IscomboPackage },
             success: function (data) {
                 alert(data.Result);
                 window.location.href = '@Url.Action("PackageMaster", "Master")';

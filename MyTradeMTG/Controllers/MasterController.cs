@@ -90,7 +90,7 @@ namespace MyTradeMTG.Controllers
                 {
                     obj.Result = "yes";
                     obj.FromAmount = Convert.ToDecimal(ds.Tables[0].Rows[0]["FromAmount"]);
-                    obj.ActivationMTGToken = Convert.ToDecimal(ds.Tables[0].Rows[0]["ActivationMTGToken"]);
+                    obj.ActivationMyTradeMTGToken = Convert.ToDecimal(ds.Tables[0].Rows[0]["ActivationMyTradeMTGToken"]);
                     obj.BasisOn = (ds.Tables[0].Rows[0]["BasisOn"]).ToString();
                     obj.ToAmount = Convert.ToDecimal(ds.Tables[0].Rows[0]["ToAmount"]);
                     obj.InMultipleOf = Convert.ToDecimal(ds.Tables[0].Rows[0]["InMultipleOf"]);
@@ -137,7 +137,7 @@ namespace MyTradeMTG.Controllers
                     obj.ROIPercent = Convert.ToDecimal(r["ROIPercent"]);
                     obj.Days = r["PackageDays"].ToString();
                     //obj.BV = Convert.ToDecimal(r["BV"]);
-                    obj.ActivationMTGToken = Convert.ToDecimal(r["ActivationMTGToken"]);
+                    obj.ActivationMyTradeMTGToken = Convert.ToDecimal(r["ActivationMyTradeMTGToken"]);
                     obj.PackageTypeId = r["PackageTypeId"].ToString();
                     obj.PackageTypeId = obj.PackageTypeId;
                     obj.PackageTypeName = r["PackageTypeName"].ToString();
@@ -309,7 +309,7 @@ namespace MyTradeMTG.Controllers
                         obj.Days = ds.Tables[0].Rows[0]["PackageDays"].ToString();
                         obj.ROIPercent = Convert.ToDecimal(ds.Tables[0].Rows[0]["ROIPercent"]);
                         //obj.BV = Convert.ToDecimal(ds.Tables[0].Rows[0]["BV"]);
-                        obj.ActivationMTGToken = Convert.ToDecimal(ds.Tables[0].Rows[0]["ActivationMTGToken"]);
+                        obj.ActivationMyTradeMTGToken = Convert.ToDecimal(ds.Tables[0].Rows[0]["ActivationMyTradeMTGToken"]);
                         obj.PackageTypeId = (ds.Tables[0].Rows[0]["PackageTypeId"].ToString());
                         obj.PackageTypeName = (ds.Tables[0].Rows[0]["PackageTypeName"].ToString());
                         obj.FromAmount = Convert.ToDecimal(ds.Tables[0].Rows[0]["FromAmount"]);
@@ -332,7 +332,7 @@ namespace MyTradeMTG.Controllers
             return View(obj);
         }
 
-        public ActionResult SaveProduct(string PackageType, string ProductName, string ProductPrice, string IGST, string ROIPercent, string BV, string FromAmount, string ToAmount, string Days, string InMultipleOf, string HSNCode, string FinalAmount, string SponsorIncome, string IscomboPackage,string ActivationMTGToken,string BasisOn)
+        public ActionResult SaveProduct(string PackageType, string ProductName, string ProductPrice, string IGST, string ROIPercent, string BV, string FromAmount, string ToAmount, string Days, string InMultipleOf, string HSNCode, string FinalAmount, string SponsorIncome, string IscomboPackage,string ActivationMyTradeMTGToken,string BasisOn)
         {
             Master obj = new Master();
             try
@@ -347,7 +347,7 @@ namespace MyTradeMTG.Controllers
                 //obj.HSNCode = HSNCode == null ? "" : HSNCode;
                 //obj.FinalAmount = Convert.ToDecimal(FinalAmount);
                 //obj.BV = Convert.ToDecimal(BV);
-                obj.ActivationMTGToken = Convert.ToDecimal(ActivationMTGToken);
+                obj.ActivationMyTradeMTGToken = Convert.ToDecimal(ActivationMyTradeMTGToken);
                 obj.AddedBy = Session["PK_AdminId"].ToString();
                 obj.FromAmount = Convert.ToDecimal(FromAmount);
                 obj.ToAmount = Convert.ToDecimal(ToAmount);
@@ -374,7 +374,7 @@ namespace MyTradeMTG.Controllers
             return Json(obj, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult UpdateProduct(string PackageType, string Packageid, string ProductName, string ProductPrice, string IGST, string ROIPercent, string BV, string FromAmount, string ToAmount, string Days, string InMultipleOf, string HSNCode, string FinalAmount,string SponsorIncome, string IscomboPackage,string ActivationMTGToken,string BasisOn)
+        public ActionResult UpdateProduct(string PackageType, string Packageid, string ProductName, string ProductPrice, string IGST, string ROIPercent, string BV, string FromAmount, string ToAmount, string Days, string InMultipleOf, string HSNCode, string FinalAmount,string SponsorIncome, string IscomboPackage,string ActivationMyTradeMTGToken,string BasisOn)
         {
             Master obj = new Master();
             try
@@ -395,7 +395,7 @@ namespace MyTradeMTG.Controllers
                 }
 
                 //obj.BV = Convert.ToDecimal(BV);
-                obj.ActivationMTGToken = Convert.ToDecimal(ActivationMTGToken);
+                obj.ActivationMyTradeMTGToken = Convert.ToDecimal(ActivationMyTradeMTGToken);
                 obj.UpdatedBy = Session["PK_AdminId"].ToString();
                 obj.FromAmount = Convert.ToDecimal(FromAmount);
                 obj.ToAmount = Convert.ToDecimal(ToAmount);

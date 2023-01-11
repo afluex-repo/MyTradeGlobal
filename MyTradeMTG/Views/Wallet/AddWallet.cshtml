@@ -13,26 +13,26 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">MTG Token/USDT Request</h4>
+                            <h4 class="card-title">MyTradeMTG Token/USDT Request</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <label style="color:red">MTG Token/USDT Balance: @ViewBag.WalletBalance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span style="color:#1e9f58">@TempData["msg"]</span></label>
+                                    <label style="color:red">MyTradeMTG Token/USDT Balance: @ViewBag.WalletBalance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span style="color:#1e9f58">@TempData["msg"]</span></label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xl-3 mb-3">
                                     <div class="example">
-                                        <p class="mb-1">Id<span style="color: red">*</span></p>
+                                        <p class="mb-1">User Id<span style="color: red">*</span></p>
                                         @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", @Placeholder = "Login Id", @onchange = "getmembername(this);", @Readonly = "true" })
                                         @*<input class="form-control input-daterange-datepicker" type="text" name="daterange" value="01/01/2015 - 01/31/2015">*@
                                     </div>
                                 </div>
                                 <div class="col-xl-3 mb-3">
                                     <div class="example">
-                                        <p class="mb-1"> MTG Token/USDT<span style="color: red">*</span></p>
-                                        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @Placeholder = "MTG Token/USDT", @onkeypress = "return isNumberOrDecimal(event);", @onchange = "return ConvertMony()" })
+                                        <p class="mb-1"> MyTradeMTG Token/USDT<span style="color: red">*</span></p>
+                                        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @Placeholder = "MyTradeMTG Token/USDT", @onkeypress = "return isNumberOrDecimal(event);", @onchange = "return ConvertMony()" })
                                     </div>
                                 </div>
                                 <input type="hidden" id="Countryid" value="@Model.Country" />

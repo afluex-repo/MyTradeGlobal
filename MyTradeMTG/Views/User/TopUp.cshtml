@@ -30,7 +30,7 @@
                         <div class="card-body" id="divtop">
                             <div class="row mb-4">
                                 <div class="col-md-12">
-                                    <label style="color:red">MTG Token/USDT Wallet Balance: @ViewBag.WalletBalance</label>
+                                    <label style="color:red">MyTradeMTG Token/USDT Wallet Balance: @ViewBag.WalletBalance</label>
 
                                     @if (ViewBag.WalletBalance == "0")
                                     {
@@ -62,13 +62,13 @@
                             </div>
                             <div class="row mb-4">
                                 <div class="col-md-4">
-                                    <label for="ActivationMTGToken">Activation MTG Token <span style="color:red">*</span></label>
-                                    <input name="ActivationMTGToken" id="ActivationMTGToken" value="" class="form-control"  readonly onchange = "return GetPackageDetails();">
+                                    <label for="ActivationMyTradeMTGToken">Activation MyTradeMTG Token <span style="color:red">*</span></label>
+                                    <input name="ActivationMyTradeMTGToken" id="ActivationMyTradeMTGToken" value="" class="form-control"  readonly onchange = "return GetPackageDetails();">
                                 </div>
                                 <div class="col-md-4">
                                     <input type="hidden" id="WalletAmount" value="@ViewBag.WalletBalance" />
-                                    <label for="Amount">MTG Token/USDT <span style="color:red">*</span></label>
-                                    @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @placeholder = "MTG Token/USDT", @onkeypress = "return isNumberKey(event);", @onchange = "return CheckAmount();" })
+                                    <label for="Amount">MyTradeMTG Token/USDT <span style="color:red">*</span></label>
+                                    @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @placeholder = "MyTradeMTG Token/USDT", @onkeypress = "return isNumberKey(event);", @onchange = "return CheckAmount();" })
                                     <span style="color:red;font-size:small;">Min  : <span id="spfrom"></span> </span><span style="color:red;padding-left:50px;font-size:small;"> Max : <span id="spto"></span> </span><span style="color:red;padding-left:50px;font-size:small;"> In Multiple Of : <span id="spmul"></span></span>
                                     <input type="hidden" value="@ViewBag.ToAmount" id="hdfMax" />
                                     <input type="hidden" id="hdfMin" />
@@ -399,7 +399,7 @@
                             $("#hdfMax").val(data.ToAmount);
                             $("#hdfMin").val(data.FromAmount);
                             $("#lblROI").text(data.ROIPercent);
-                            $("#ActivationMTGToken").val(data.ActivationMTGToken);
+                            $("#ActivationMyTradeMTGToken").val(data.ActivationMyTradeMTGToken);
                             $("#BasisOn").text(data.BasisOn);
                         }
                         else {
@@ -493,8 +493,8 @@
         });
     }
 
-    var input = $('[name="ActivationMTGToken"],[name="Amount"]'),
-    input1 = $('[name="ActivationMTGToken"]'),
+    var input = $('[name="ActivationMyTradeMTGToken"],[name="Amount"]'),
+    input1 = $('[name="ActivationMyTradeMTGToken"]'),
     input2 = $('[name="Amount"]'),
     input3 = $('[name="TotalAmount"]');
     input.change(function () {
