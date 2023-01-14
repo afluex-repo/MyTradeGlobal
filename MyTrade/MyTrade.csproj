@@ -1010,7 +1010,6 @@
     <Content Include="UserPanel\vendor\lightgallery\fonts\lgd641.ttf" />
     <Content Include="UserPanel\vendor\lightgallery\fonts\lgd641.woff" />
     <Content Include="Views\Master\BalanceTransfer.cshtml" />
-    <Content Include="Views\Wallet\WalletTransfer.cshtml" />
     <Content Include="Views\User\WalletTransfer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

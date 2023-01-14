@@ -3,7 +3,6 @@ document.write(`
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="keywords" content="">		
 		<!-- SITE TITLE -->
@@ -26,6 +25,8 @@ document.write(`
 		<!-- Style CSS -->		
 		<link rel="stylesheet" href="assets/css/style.css">			
 		<link rel="stylesheet" href="assets/css/responsive.css">
+        <!--Popup CSS-->
+		<link rel="stylesheet" href="assets/css/popup.css">
 
         <div class="body-particles"></div>
 
@@ -53,13 +54,13 @@ document.write(`
 							<nav id="main-menu" class="ml-auto">
 								<ul>
 								<li><a href="index.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="index.html#token_sale">Token sale</a></li>
-								<li><a href="roadmap.html">Roadmap</a></li>								  							  
-								<li><a href="faq.html">faq</a></li>	
+								<li><a href="index.html#about">About</a></li>
+								<li><a href="index.html#forex">Forex</a></li>
+								<li><a href="index.html#business">Business</a></li>
+								<li><a href="index.html#faq">faq</a></li>	
 								<li><a href="index.html#download">Get App</a></li>									  
-								<li><a href="contact.html">Contact Us</a></li>
-								<li><a class ="block-menu" href="/Home/Login">Login</a></li>
+								<li><a href="index.html#contact">Contact Us</a></li>
+								<li><a class ="block-menu" id="modal_trigger" href="#modal">Login</a></li>
 								</ul>
 							</nav>
 							<div id="mobile_menu"></div>
@@ -69,6 +70,98 @@ document.write(`
 			</div><!--- END CONTAINER -->
 		</div> 	  
 		<!-- END NAVBAR -->
+
+        <!--START LOGIN-->
+		<div id="modal" class ="popupContainer" style="position:fixed;z-index:2;
+    opacity: 1;
+    z-index: 11000;
+    left: 50%;
+    margin-left: -165px;
+    top: 100px;">
+			<header class ="popupHeader">
+				<span class ="header_title">Login</span>
+				<span class ="modal_close"><i class ="fa fa-times"></i></span>
+			</header>
+
+			<div class ="popupBody">
+				<!--Social Login-->
+				<div class ="social_login">
+					<div class ="">
+						<a href="#" class ="social_box fb">
+							<span class ="icon"><i class ="fa fa-facebook"></i></span>
+							<span class ="icon_title">Connect with Facebook</span>
+						</a>
+
+						<a href="#" class ="social_box google">
+							<span class ="icon"><i class ="fa fa-google-plus"></i></span>
+							<span class ="icon_title">Connect with Google</span>
+						</a>
+					</div>
+
+					<div class ="centeredText">
+						<span>Or use your Email address</span>
+					</div>
+
+					<div class ="action_btns">
+						<div class ="one_half"><a href="#" id="login_form" class ="abtn">Login</a></div>
+						<div class ="one_half last"><a href="#" id="register_form" class ="abtn">Sign up</a></div>
+					</div>
+				</div>
+
+				<!--Username & Password Login form-->
+				<div class ="user_login">
+					<form>
+						<label>Email / Username</label>
+						<input type="text" />
+						<br />
+
+						<label>Password</label>
+						<input type="password" />
+						<br />
+
+						<div class ="checkbox">
+							<input id="remember" type="checkbox" />
+							<label for="remember">Remember me on this computer</label>
+						</div>
+
+						<div class ="action_btns">
+							<div class ="one_half"><a href="#" class ="abtn back_btn"><i class ="fa fa-angle-double-left"></i> Back</a></div>
+							<div class ="one_half last"><a href="#" class ="abtn">Login</a></div>
+						</div>
+					</form>
+
+					<a href="#" class ="forgot_password">Forgot password?</a>
+				</div>
+
+				<!--Register Form-->
+				<div class ="user_register">
+					<form>
+						<label>Full Name</label>
+						<input type="text" />
+						<br />
+
+						<label>Email Address</label>
+						<input type="email" />
+						<br />
+
+						<label>Password</label>
+						<input type="password" />
+						<br />
+
+						<div class ="checkbox">
+							<input id="send_updates" type="checkbox" />
+							<label for="send_updates">Send me occasional email updates</label>
+						</div>
+
+						<div class ="action_btns">
+							<div class ="one_half"><a href="#" class ="abtn back_btn"><i class ="fa fa-angle-double-left"></i> Back</a></div>
+							<div class ="one_half last"><a href="#" class ="abtn">Register</a></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--END LOGIN-->
 
 
 `);

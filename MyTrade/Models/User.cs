@@ -67,7 +67,7 @@ namespace MyTrade.Models
         public string GrossAmount { get; set; }
         public string ProcessingFee { get; set; }
         public string PackageTypeId { get; set; }
-
+        public string MemberTransferCharge { get; set; }
 
         #endregion
 

@@ -332,7 +332,7 @@ namespace MyTrade.Controllers
             return View(obj);
         }
 
-        public ActionResult SaveProduct(string PackageType, string ProductName, string ProductPrice, string IGST, string ROIPercent, string BV, string FromAmount, string ToAmount, string Days, string InMultipleOf, string HSNCode, string FinalAmount, string SponsorIncome, string IscomboPackage,string ActivationMTGToken,string BasisOn)
+        public ActionResult SaveProduct(string PackageType, string ProductName, string ProductPrice, string IGST, string ROIPercent, string BV, string FromAmount, string ToAmount, string Days, string InMultipleOf, string HSNCode, string FinalAmount, string SponsorIncome, string IscomboPackage,string ActivationMTGToken,string BasisOn,string DrAmount1,string DrAmount2,string DrAmount3,string ReturnPercent1,string ReturnPercent2,string ReturnPercent3)
         {
             Master obj = new Master();
             try
@@ -344,6 +344,12 @@ namespace MyTrade.Controllers
                 //obj.IGST = Convert.ToDecimal(IGST);
                 obj.Days = Days;
                 obj.ROIPercent = Convert.ToDecimal(ROIPercent);
+                obj.DrAmount1 = Convert.ToDecimal(DrAmount1);
+                obj.DrAmount2 = Convert.ToDecimal(DrAmount2);
+                obj.DrAmount3 = Convert.ToDecimal(DrAmount3);
+                obj.ReturnPercent1 = Convert.ToDecimal(ReturnPercent1);
+                obj.ReturnPercent2 = Convert.ToDecimal(ReturnPercent2);
+                obj.ReturnPercent3 = Convert.ToDecimal(ReturnPercent3);
                 //obj.HSNCode = HSNCode == null ? "" : HSNCode;
                 //obj.FinalAmount = Convert.ToDecimal(FinalAmount);
                 //obj.BV = Convert.ToDecimal(BV);
@@ -374,7 +380,7 @@ namespace MyTrade.Controllers
             return Json(obj, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult UpdateProduct(string PackageType, string Packageid, string ProductName, string ProductPrice, string IGST, string ROIPercent, string BV, string FromAmount, string ToAmount, string Days, string InMultipleOf, string HSNCode, string FinalAmount,string SponsorIncome, string IscomboPackage,string ActivationMTGToken,string BasisOn)
+        public ActionResult UpdateProduct(string PackageType, string Packageid, string ProductName, string ProductPrice, string IGST, string ROIPercent, string BV, string FromAmount, string ToAmount, string Days, string InMultipleOf, string HSNCode, string FinalAmount,string SponsorIncome, string IscomboPackage,string ActivationMTGToken,string BasisOn, string DrAmount1, string DrAmount2, string DrAmount3, string ReturnPercent1, string ReturnPercent2, string ReturnPercent3)
         {
             Master obj = new Master();
             try
@@ -388,6 +394,12 @@ namespace MyTrade.Controllers
                 obj.Days = Days;
                 obj.SponsorIncome = Convert.ToDecimal(SponsorIncome);
                 obj.ROIPercent = Convert.ToDecimal(ROIPercent);
+                obj.DrAmount1 = Convert.ToDecimal(DrAmount1);
+                obj.DrAmount2 = Convert.ToDecimal(DrAmount2);
+                obj.DrAmount3 = Convert.ToDecimal(DrAmount3);
+                obj.ReturnPercent1 = Convert.ToDecimal(ReturnPercent1);
+                obj.ReturnPercent2 = Convert.ToDecimal(ReturnPercent2);
+                obj.ReturnPercent3 = Convert.ToDecimal(ReturnPercent3);
                 //obj.HSNCode = HSNCode;
                 if (obj.IGST != 0)
                 {

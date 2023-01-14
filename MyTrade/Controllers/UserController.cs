@@ -2071,7 +2071,7 @@ namespace MyTrade.Controllers
             DataSet ds1 = objcomm.GetWalletTransferCharge();
             if (ds1 != null && ds1.Tables.Count > 0 && ds1.Tables[0].Rows.Count > 0)
             {
-                ViewBag.MemberTransferCharge = ds1.Tables[0].Rows[0]["MemberTransferCharge"].ToString();
+                Session["MemberTransferCharge"] = ds1.Tables[0].Rows[0]["MemberTransferCharge"].ToString();
             }
             #endregion
             return View();

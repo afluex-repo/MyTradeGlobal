@@ -3,11 +3,10 @@
     ViewBag.Title = "WalletTransfer";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
-
+<link href="~/plugins/notification/snackbar/snackbar.min.css" rel="stylesheet" type="text/css" />
 
 @using (Html.BeginForm("WalletTransfer", "User", FormMethod.Post, new
-{ @*@id = "form1",*@ enctype = "multipart/form-data"
-}))
+{ /*@id = "form1",*/ @onSubmit = "if(!confirm('Are You Sure? You want to Transfer Your MTG Token To Below Contact Address Id')){return false;}", enctype = "multipart/form-data"}))
 {
     <div class="content-body">
         <div class="container-fluid">
@@ -21,9 +20,10 @@
                             <div class="row">
                                 <div class="row mb-4">
                                     <div class="col-md-12">
-                                        <p class="mb-1">@TempData["wallettransfer"]</p>
+                                        <p class="mb-1" style="color:white;">@TempData["wallettransfer"]</p>
                                         <br />
                                         <label style="color:red">MTG Token/USDT Wallet Balance: @ViewBag.WalletBalance</label>
+
                                     </div>
                                 </div>
                             </div>
@@ -43,15 +43,20 @@
                                 </div>
                                 <div class="col-xl-3 mb-3">
                                     <div class="example">
+                                        <input type="hidden" id="WalletAmount" value="@ViewBag.WalletBalance" />
                                         <p class="mb-1"> MTG Token/USDT<span style="color: red">*</span></p>
-                                        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @Placeholder = "MTG Token/USDT", @onkeypress = "return isNumberOrDecimal(event);" })
+                                        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @Placeholder = "MTG Token/USDT", @onkeypress = "return isNumberOrDecimal(event);", @onchange = "return CheckAmount();" })
+                                        @*<input id="SumTransferandAmount" name="SumTransferandAmount" readonly class="form-control" style="background:none;border:none;font-size:x-small" />*@
                                     </div>
                                 </div>
                                 <div class="col-xl-3 mb-3">
                                     <div class="example">
-                                        <p class="mb-1">Transfer Charge<span style="color: red">*</span></p>
-                                        @*<label id="DirectPayment">@ViewBag.DirectPayment</label>*@
-                                        <input id="MemberTransferCharge" name="MemberTransferCharge" value="@ViewBag.MemberTransferCharge" readonly class="form-control" />
+                                        <p class="mb-1">Transfer Charge( @Session["MemberTransferCharge"]% )<span style="color: red">*</span></p>
+                                        @*<label id="TransferCharge"></label>*@
+                                        @*@Html.HiddenFor(m => m.MemberTransferCharge,new { @value= "@ViewBag.MemberTransferCharge" })*@
+                                        <input id="MemberTransferCharge" name="MemberTransferCharge" value="@Session["MemberTransferCharge"]" hidden />
+                                        <input id="TransferCharge" name="TransferCharge" readonly class="form-control" style="background:none;border:none;font-size:x-large" />
+
                                     </div>
                                 </div>
 
@@ -73,12 +78,62 @@
     </div>
 
 }
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
-<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+@*<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>*@
+@*<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />*@
 <script src="~/MyTradeWebsite/assets/js/jquery.min.js"></script>
+<script src="~/plugins/notification/snackbar/snackbar.min.js"></script>
+<script src="~/assets/js/components/notification/custom-snackbar.js"></script>
 
 <script>
+
+        function CheckAmount() {
+            debugger;
+            var WalletAmount = $("#WalletAmount").val();
+            var Amount = parseFloat($("#Amount").val());
+
+            var MemberTransferCharge = parseFloat($("#MemberTransferCharge").val());
+            
+            var Percent = Amount * parseFloat(MemberTransferCharge/ 100);
+            var PercentValues = parseFloat(Percent);
+            var TotalSumValues = Amount + PercentValues;
+            //alert(sum);
+
+            if (TotalSumValues > WalletAmount) {
+                alert("MTG Token Should be Not Greater Than MTG Wallet Balance");
+                $("#Amount").addClass('errortext');
+                $('#Amount').focus();
+                $("#Amount").val('');
+            }
+            else if (TotalSumValues <= WalletAmount) {
+                //alert("Right h");
+            }
+            else
+            {
+                //alert("Enter ");
+                $("#Amount").addClass('errortext');
+                $('#Amount').focus();
+            }
+
+
+            if (Amount == "0") {
+                Snackbar.show({
+                    text: "MTG Token should not be zero !!",
+                    actionTextColor: '#fff',
+                    backgroundColor: '#e7515a',
+                    pos: 'top-right'
+                });
+                $("#Amount").addClass('errortext');
+                $('#Amount').focus();
+                $("#Amount").val('');
+                return false;
+            }
+            
+        }
+   
+
 
     function GetNameDetailsforUser() {
         debugger;
@@ -105,7 +160,6 @@
 
         });
     }
-
 
     function validateform() {
         debugger;
@@ -135,8 +189,41 @@
 
         return true;
     }
-</script>
 
+</script>
+<script>
+
+</script>
+<script>
+    debugger;
+    //Percentage of DirectTransferCharge + Entered Amount
+    var input = $('[name="MemberTransferCharge"],[name="Amount"]'),
+    input1 = $('[name="MemberTransferCharge"]'),
+    input2 = $('[name="Amount"]'),
+    input3 = $('[name="TransferCharge"]');
+
+    input.change(function () {
+        debugger;
+        var val1 = isNaN(parseFloat(input1.val()).toFixed(2)) ? 0 : parseFloat(input1.val());
+        var val2 = isNaN(parseFloat(input2.val()).toFixed(2)) ? 0 : parseFloat(input2.val());
+        input3.val(parseFloat(val2.toFixed(2) * (val1.toFixed(2) / parseFloat(100).toFixed(2))).toFixed(2));
+    });
+
+</script>
+@*<script>
+    debugger;
+    var input = $('[name="TransferCharge"],[name="Amount"]'),
+   input3 = $('[name="TransferCharge"]'),
+   input4 = $('[name="Amount"]'),
+    input5 = $('[name="SumTransferandAmount"]');
+
+    input.change(function () {
+        debugger;
+        var val3 = isNaN(parseFloat(input3.val()).toFixed(2)) ? 0 : parseFloat(input3.val());
+        var val4 = isNaN(parseFloat(input4.val()).toFixed(2)) ? 0 : parseFloat(input4.val());
+        input5.val(parseFloat(val3).toFixed(2) + parseFloat(val4).toFixed(2));
+    });
+</script>*@
 <style>
     .errortext {
         border: 1px solid red !important;

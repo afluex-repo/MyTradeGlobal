@@ -48,7 +48,13 @@ namespace MyTrade.Models
         public string Name { get; set; }
         public string Amount { get; set; }
         public List<SelectListItem> ddlProduct { get; set; }
-
+        public decimal DrAmount1 { get; set; }
+        public decimal DrAmount2 { get; set; }
+        public decimal DrAmount3 { get; set; }
+        public decimal ReturnPercent1 { get; set; }
+        public decimal ReturnPercent2 { get; set; }
+        public decimal ReturnPercent3 { get; set; }
+        
         #region ProductMaster
         public DataSet GetProductListForPackageList()
         {
@@ -88,6 +94,12 @@ namespace MyTrade.Models
                                       //new SqlParameter("@HSNCode", HSNCode),
                                  //new SqlParameter("@FinalAmount",FinalAmount),
                                   new SqlParameter("@ActivationMTGToken",ActivationMTGToken),
+                                   new SqlParameter("@DrAmount1",DrAmount1),
+                                   new SqlParameter("@DrAmount2",DrAmount2),
+                                   new SqlParameter("@DrAmount3",DrAmount3),
+                                   new SqlParameter("@ReturnPercent1",ReturnPercent1),
+                                   new SqlParameter("@ReturnPercent2",ReturnPercent2),
+                                   new SqlParameter("@ReturnPercent3",ReturnPercent3),
                                  new SqlParameter("@SponsorIncome",SponsorIncome),
                                  new SqlParameter("@IscomboPackage",IscomboPackage)
             };
@@ -155,6 +167,12 @@ namespace MyTrade.Models
                                  new SqlParameter("@InMultipleOf", InMultipleOf),
                                  //new SqlParameter("@HSNCode", HSNCode),
                                  //new SqlParameter("@FinalAmount",FinalAmount),
+                                 new SqlParameter("@DrAmount1",DrAmount1),
+                                   new SqlParameter("@DrAmount2",DrAmount2),
+                                   new SqlParameter("@DrAmount3",DrAmount3),
+                                   new SqlParameter("@ReturnPercent1",ReturnPercent1),
+                                   new SqlParameter("@ReturnPercent2",ReturnPercent2),
+                                   new SqlParameter("@ReturnPercent3",ReturnPercent3),
                                  new SqlParameter("@SponsorIncome",SponsorIncome),
                                   new SqlParameter("@IscomboPackage",IscomboPackage),
             };

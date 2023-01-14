@@ -35,6 +35,9 @@ namespace MyTrade.Models
         public string CustomerName { get; set; }
         public List<SelectListItem> ddlcountry { get; set; }
 
+        public string MemberTransferCharge { get; set; }
+        
+
         public static string GenerateRandom()
         {
             Random r = new Random();
@@ -273,7 +276,7 @@ namespace MyTrade.Models
 
         public DataSet GetWalletTransferCharge()
         {
-            SqlParameter[] para = { /*new SqlParameter("@PK_USerID", Fk_UserId)*/ };
+            SqlParameter[] para = { /*new SqlParameter("@MemberTransferCharge", MemberTransferCharge)*/ };
             DataSet ds = DBHelper.ExecuteQuery("GetWalletTransferCharge", para);
 
             return ds;

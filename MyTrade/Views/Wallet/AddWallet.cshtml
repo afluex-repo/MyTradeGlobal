@@ -265,8 +265,6 @@
 <script src="~/MyTradeWebsite/assets/js/jquery.min.js"></script>
 <script>
  
-
-
     function ConvertMony() {
         debugger;
         //if ($("#Countryid").val() == "America") {
@@ -720,21 +718,6 @@
     }
 </style>
 
-<script>
-    var myHeaders = new Headers();
-    myHeaders.append("apikey", "OJYFezpazEnNXADFqcXvoFGQWhoEmlPo");
-
-    var requestOptions = {
-        method: 'GET',
-        redirect: 'follow',
-        headers: myHeaders
-    };
-
-    fetch("https://api.apilayer.com/exchangerates_data/latest?symbols=INR&base=USD", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
-</script>
 
 
 
